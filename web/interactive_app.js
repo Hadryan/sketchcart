@@ -27,7 +27,7 @@ map.on('moveend', function(){
 // Add a fake GeoJSON line to coerce Leaflet into creating the <svg> tag that d3_geoJson needs
 new L.geoJson({"type": "LineString","coordinates":[[0,0],[0,0]]}).addTo(map);
 
-$("#map").append($("<div>").css({ position: "fixed", background: "#ccc", opacity: 0.85, bottom: 0, right: 0 }).html("Data &copy 2015 OpenStreetMap contributors - Vector Tiles from OSM US - Drawn by <a href='https://github.com/mapmeld/sketchcart'>sketchcart</a> Written by <a href='https://twitter.com/mapmeld'>@mapmeld</a>"));
+$("#map").append($("<div>").css({ position: "fixed", background: "#ccc", opacity: 0.85, bottom: 0, right: 0 }).html("Data &copy 2016 OpenStreetMap contributors - Vector Tiles from MapZen - Drawn by <a href='https://github.com/mapmeld/sketchcart'>sketchcart</a> Written by <a href='https://twitter.com/mapmeld'>@mapmeld</a>"));
 
 L.TileLayer.d3_geoJSON =  L.TileLayer.extend({
   onAdd : function(map) {
@@ -68,7 +68,7 @@ L.TileLayer.d3_geoJSON =  L.TileLayer.extend({
   }
 });
 
-new L.TileLayer.d3_geoJSON("http://tile.openstreetmap.us/vectiles-highroad/{z}/{x}/{y}.json", {
+new L.TileLayer.d3_geoJSON("//vector.mapzen.com/osm/roads/{z}/{x}/{y}.json?api_key=vector-tiles-5Vy5RHT", {
   class: "road",
   style: function(d) { return "stroke: #000; stroke-width: 1.5;"; }
 }).addTo(map);
